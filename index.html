@@ -5,93 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تقديم طلب</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-             <h1>تقديم طلب</h1>
+            <img src="logo.png" alt="شعار الجهة" class="logo">  <h1>تقديم طلب</h1>
             <p>يرجى ملء الحقول التالية بدقة لإتمام طلبك.</p>
         </header>
 
         <form id="applicationForm">
             <div class="form-section">
                 <h2><i class="fas fa-user-circle"></i> المعلومات الشخصية</h2>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="fullNameArabic">الاسم الرباعي بالعربي <span class="required">*</span></label>
-                        <input type="text" id="fullNameArabic" name="fullNameArabic" placeholder="مثال: محمد أحمد عبدالله سالم" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="fullNameEnglish">الاسم الرباعي بالإنجليزي <span class="required">*</span></label>
-                        <input type="text" id="fullNameEnglish" name="fullNameEnglish" placeholder="e.g., Mohammed Ahmed Abdullah Salem" required dir="ltr">
-                    </div>
-                    <div class="form-group">
-                        <label for="idNumber">رقم الهوية / الإقامة <span class="required">*</span></label>
-                        <input type="text" id="idNumber" name="idNumber" placeholder="أدخل رقم الهوية أو الإقامة" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nationality">الجنسية <span class="required">*</span></label>
-                        <select id="nationality" name="nationality" required>
-                            <option value="">اختر الجنسية...</option>
-                            <option value="sa">سعودي</option>
-                            <option value="eg">مصري</option>
-                            <option value="jo">أردني</option>
-                            {/* أضف المزيد من الجنسيات */}
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="dob">تاريخ الميلاد <span class="required">*</span></label>
-                        <input type="date" id="dob" name="dob" required>
-                    </div>
-                     <div class="form-group">
-                        <label for="medicalNumber">الرقم الطبي (اختياري)</label>
-                        <input type="text" id="medicalNumber" name="medicalNumber" placeholder="أدخل الرقم الطبي إن وجد">
+                <div class="form-section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullNameArabic">الاسم الرباعي بالعربي <span class="required">*</span></label>
+                            <input type="text" id="fullNameArabic" name="fullNameArabic" placeholder="مثال: محمد أحمد عبدالله سالم" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullNameEnglish">الاسم الرباعي بالإنجليزي <span class="required">*</span></label>
+                            <input type="text" id="fullNameEnglish" name="fullNameEnglish" placeholder="e.g., Mohammed Ahmed Abdullah Salem" required dir="ltr">
+                        </div>
+                        <div class="form-group">
+                            <label for="idNumber">رقم الهوية / الإقامة <span class="required">*</span></label>
+                            <input type="text" id="idNumber" name="idNumber" placeholder="أدخل رقم الهوية أو الإقامة" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">الجنسية <span class="required">*</span></label>
+                            <select id="nationality" name="nationality" required>
+                                <option value="">اختر الجنسية...</option>
+                                <option value="sa">سعودي</option>
+                                <option value="eg">مصري</option>
+                                <option value="jo">أردني</option>
+                                {/* أضف المزيد من الجنسيات */}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">تاريخ الميلاد <span class="required">*</span></label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="medicalNumber">الرقم الطبي (اختياري)</label>
+                            <input type="text" id="medicalNumber" name="medicalNumber" placeholder="أدخل الرقم الطبي إن وجد">
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="form-section">
                 <h2><i class="fas fa-briefcase"></i> معلومات العمل والاتصال</h2>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="employer">جهة العمل (اختياري)</label>
-                        <input type="text" id="employer" name="employer" placeholder="اسم جهة العمل">
-                    </div>
-                    <div class="form-group">
-                        <label for="mobileNumber">رقم الجوال (يبدأ بـ 05) <span class="required">*</span></label>
-                        <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="05XXXXXXXX" pattern="05[0-9]{8}" title="يجب أن يبدأ الرقم بـ 05 ويتكون من 10 أرقام" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">البريد الإلكتروني <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required dir="ltr">
-                    </div>
-                     <div class="form-group">
-                        <label for="city">المدينة / المنطقة <span class="required">*</span></label>
-                        <input type="text" id="city" name="city" placeholder="مثال: الرياض / جدة" required>
+                <div class="form-section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="employer">جهة العمل (اختياري)</label>
+                            <input type="text" id="employer" name="employer" placeholder="اسم جهة العمل">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileNumber">رقم الجوال (يبدأ بـ 05) <span class="required">*</span></label>
+                            <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="05XXXXXXXX" pattern="05[0-9]{8}" title="يجب أن يبدأ الرقم بـ 05 ويتكون من 10 أرقام" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required dir="ltr">
+                        </div>
+                         <div class="form-group">
+                            <label for="city">المدينة / المنطقة <span class="required">*</span></label>
+                            <input type="text" id="city" name="city" placeholder="مثال: الرياض / جدة" required>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="form-section">
                 <h2><i class="fas fa-calendar-alt"></i> تفاصيل الإجازة والمنشأة</h2>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="vacationDays">عدد أيام الإجازة <span class="required">*</span></label>
-                        <input type="number" id="vacationDays" name="vacationDays" min="1" placeholder="أدخل عدد الأيام" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="vacationUnit">حدد مدة الإجازة <span class="required">*</span></label>
-                        <select id="vacationUnit" name="vacationUnit" required>
-                            <option value="day">يوم</option>
-                            <option value="month">شهر</option>
-                            <option value="year">سنة</option>
-                        </select>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="healthFacility">المنشأة الصحية / المستشفى / المستوصف <span class="required">*</span></label>
-                        <input type="text" id="healthFacility" name="healthFacility" placeholder="اسم المنشأة الصحية" required>
+                <div class="form-section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="vacationDays">عدد أيام الإجازة <span class="required">*</span></label>
+                            <input type="number" id="vacationDays" name="vacationDays" min="1" placeholder="أدخل عدد الأيام" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vacationUnit">حدد مدة الإجازة <span class="required">*</span></label>
+                            <select id="vacationUnit" name="vacationUnit" required>
+                                <option value="day">يوم</option>
+                                <option value="month">شهر</option>
+                                <option value="year">سنة</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="healthFacility">المنشأة الصحية / المستشفى / المستوصف <span class="required">*</span></label>
+                            <input type="text" id="healthFacility" name="healthFacility" placeholder="اسم المنشأة الصحية" required>
+                        </div>
                     </div>
                 </div>
             </div>
