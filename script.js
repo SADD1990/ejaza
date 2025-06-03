@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('applicationForm');
-    const whatsappNumber = '966511003237'; // رقم الواتساب بدون علامة + أو أصفار دولية بادئة
+    const whatsappNumber = '0564492042'; // رقم الواتساب بدون علامة + أو أصفار دولية بادئة
 
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // منع الإرسال التقليدي
