@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             
             // توجيه مباشر بدون رسالة مبدئية أو برسالة بسيطة
-             const defaultMessage = encodeURIComponent("أرغب في تقديم طلب عبر الموقع.");
+             const defaultMessage = encodeURIComponent("السلام عليكم ورحمة الله وبركاته ، أرغب في الحصول على إجازة");
              window.location.href = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
             
             // يمكنك اختيار إعادة تعيين النموذج بعد التوجيه أو لا
