@@ -1,0 +1,286 @@
+:root {
+    --primary-color: #007bff; /* أزرق جذاب */
+    --secondary-color: #6c757d; /* رمادي ثانوي */
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --font-family: 'Cairo', sans-serif;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    margin: 0;
+    padding: 0; /* تعديل: إزالة الحشوة من الجسم مباشرة */
+    line-height: 1.6;
+    direction: rtl;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto; /* تعديل: الحاوية تأخذ كامل العرض على الشاشات الصغيرة جداً */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 0; /* تعديل: إزالة تقريب الحواف للحاويات التي تملأ الشاشة */
+    box-shadow: none; /* تعديل: إزالة الظل للحاويات التي تملأ الشاشة */
+}
+
+/* إعادة بعض الإعدادات الافتراضية للحاويات على الشاشات الأكبر */
+@media (min-width: 576px) { /* نقطة فاصلة لشاشات الهواتف الأكبر قليلاً والأجهزة اللوحية الصغيرة */
+    body {
+        padding: 20px; /* إعادة الحشوة للجسم */
+    }
+    .container {
+        margin: 30px auto;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+    }
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+header .logo {
+    max-width: 120px; /* تصغير الشعار قليلاً بشكل افتراضي */
+    margin-bottom: 15px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 2em; /* تعديل حجم الخط الافتراضي */
+}
+
+header p {
+    color: var(--secondary-color);
+    font-size: 1em; /* تعديل حجم الخط الافتراضي */
+}
+
+.form-section {
+    margin-bottom: 25px; /* تقليل الهامش قليلاً */
+    padding: 20px;
+    background-color: #fdfdfd;
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius);
+}
+
+.form-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4em; /* تعديل حجم الخط الافتراضي */
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.form-section h2 i {
+    margin-left: 10px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-gray);
+    font-size: 0.95em; /* تعديل حجم الخط الافتراضي */
+}
+
+.form-group label .required {
+    color: var(--danger-color);
+    margin-right: 4px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-family: var(--font-family);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[dir="ltr"],
+.form-group select[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.7;
+}
+.form-group input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+
+.form-actions {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 20px; /* تعديل الحشوة قليلاً */
+    font-size: 1em; /* تعديل حجم الخط الافتراضي */
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: var(--font-family);
+    display: block; /* جعل الزر يأخذ كامل العرض على الشاشات الصغيرة مبدئياً */
+    width: 100%;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-primary i {
+    margin-right: 8px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px; /* تقليل الهامش قليلاً */
+    padding: 20px 15px; /* تعديل الحشوة */
+    border-top: 1px solid #eee;
+    color: var(--secondary-color);
+    font-size: 0.9em; /* تعديل حجم الخط الافتراضي */
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for validation messages (to be used with JavaScript) */
+.form-group .error-message {
+    color: var(--danger-color);
+    font-size: 0.85em; /* تعديل حجم الخط الافتراضي */
+    margin-top: 5px;
+}
+
+.form-group input.invalid,
+.form-group select.invalid {
+    border-color: var(--danger-color);
+}
+
+.form-group input.valid,
+.form-group select.valid {
+    border-color: var(--success-color);
+}
+
+
+/* =================================== */
+/* Mobile First & Responsive Tweaks  */
+/* =================================== */
+
+/* إعدادات أساسية للهواتف (الشاشات الصغيرة جداً) */
+/* تم دمج الكثير من هذه الإعدادات في القواعد الأساسية أعلاه */
+
+/* للشاشات الصغيرة والمتوسطة (مثل الهواتف بالعرض والأجهزة اللوحية الصغيرة) */
+@media (min-width: 576px) {
+    .container {
+        padding: 25px; /* إعادة بعض الحشوة للحاوية */
+    }
+    .btn {
+        display: inline-block; /* إعادة الزر ليكون بحجم المحتوى */
+        width: auto;
+    }
+     .form-actions {
+        text-align: left; /* إعادة محاذاة الزر لليسار */
+    }
+    header .logo {
+        max-width: 150px;
+    }
+    header h1 {
+        font-size: 2.2em;
+    }
+    header p {
+        font-size: 1.1em;
+    }
+     .form-section h2 {
+        font-size: 1.5em;
+    }
+    .form-group label {
+        font-size: 1em;
+    }
+     .btn {
+        font-size: 1.1em;
+    }
+    footer {
+        font-size: 1em;
+    }
+    .form-group .error-message {
+        font-size: 0.9em;
+    }
+}
+
+
+/* للشاشات الأكبر (الأجهزة اللوحية بالشكل العرضي والحواسيب المكتبية الصغيرة) */
+@media (min-width: 768px) {
+    .form-grid {
+        /* إذا كنت تريد عمودين هنا بدلاً من auto-fit، يمكنك تحديدها صراحة */
+        /* grid-template-columns: 1fr 1fr; */
+    }
+    .container {
+        padding: 30px;
+    }
+}
+
+/* للشاشات الكبيرة (الحواسيب المكتبية) */
+@media (min-width: 992px) {
+    /* لا تغييرات محددة هنا، فالإعدادات الافتراضية تعمل بشكل جيد */
+    /* لكن يمكنك إضافة تخصيصات للشاشات الكبيرة جداً إذا أردت */
+}
